@@ -28,15 +28,21 @@ Constraints:
  * @return {boolean}
  */
 const isPalindrome = (input) => { 
-    const str =  Math.abs(input)
-    const strLength = str.length
-    const maxComparisons = strLength % 2 === 0 ? strLength / 2 : Math.floor(strLength / 2);
+    const num =  Math.abs(input)
+    const numLength = num.length
+    const maxComparisons = numLength % 2 === 0 ? numLength / 2 : Math.floor(numLength / 2);
 
     for(let i = 0; i < maxComparisons; i++) {
-        firstChar = str[i]
-        lastChar = str[strLength - 1 - i]
+        console.log(`i`, i)
+        let firstChar = num[i]
+        let lastChar = num[numLength - 1 - i]
         
         if(firstChar !== lastChar) { return false }
     }
     return true
 }
+
+console.log(`isPalindrome(-121)`, isPalindrome(-121))
+console.log(`isPalindrome(121)`, isPalindrome(121))
+console.log(`isPalindrome(10)`, isPalindrome(10))
+console.log(`isPalindrome(1022)`, isPalindrome(1022))
